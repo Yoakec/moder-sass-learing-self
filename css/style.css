@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+}
+body {
+  font-family: 'Courier New', Courier, monospace; /* 设置字体,会被body里面的元素都继承 */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 96vh; /* 100vh是整个屏幕的高度，96vh是屏幕高度的96% */
+  background-image: linear-gradient(to right bottom, #7ed56fb1, #55c67bb5),
+    /* 设置渐变色 */
+      url(https://images.freeimages.com/images/large-previews/a4c/girl-under-tree-1306574.jpg);
+  background-size: cover; /* 背景图片的大小，cover是填充整个屏幕 */
+  background-position: top; /* 背景图片的位置，top是顶部,当浏览器视口大小发生变化时，背景不会裁剪的位置 */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    0 100%
+  ); /* 裁剪图片，polygon()是裁剪图片的形状 ,里面的参数是各个角的坐标*/
+  position: relative; /* 设置相对定位，这样子元素才能设置绝对定位 */
+}
+
+.logo-box {
+  position: absolute; /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
+  top: 40px;
+  left: 40px;
+  transform: translate(-50%, -50%); /* 使logo-box居中 */
+  text-align: center;
+}
+
+.logo {
+  height: 35px; /* 设置logo的高度，浏览器会自动计算其宽度 */
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%; /* 使text-box居中是相对左顶点 */
+  transform: translate(-50%, -50%); /* 使text-box居中是相对左顶点 */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase; /* 设置字母大写 */
+}
+.primary-main {
+  display: block; /* 设置为块级元素,是为了能够让其能够让其暂用可用的 */
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px; /* 设置字母间距 */
+}
+.primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 15px;
+}
