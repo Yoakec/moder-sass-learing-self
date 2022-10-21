@@ -1,15 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+  box-sizing: inherit; /*使得所有元素都继承box-sizing属性*/
+}
+
+html {
+  font-size: 62.5%; /*62.5% = 10px/16px 16px是浏览器默认*/
 }
 body {
   font-family: 'Courier New', Courier, monospace; /* 设置字体,会被body里面的元素都继承 */
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
 }
 
 .header {
@@ -30,14 +35,14 @@ body {
 
 .logo-box {
   position: absolute; /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
   transform: translate(-50%, -50%); /* 使logo-box居中 */
   text-align: center;
 }
 
 .logo {
-  height: 35px; /* 设置logo的高度，浏览器会自动计算其宽度 */
+  height: 3.5rem; /* 设置logo的高度，浏览器会自动计算其宽度 */
 }
 
 .text-box {
@@ -51,13 +56,13 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase; /* 设置字母大写 */
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .primary-main {
   display: block; /* 设置为块级元素,是为了能够让其能够让其暂用可用的 */
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px; /* 设置字母间距 */
+  letter-spacing: 3.5rem; /* 设置字母间距 */
   animation-name: moveInLeft; /* 设置应用动画名 */
   animation-duration: 1s; /* 设置动画持续时间 */
   animation-timing-function: ease-out; /* 设置动画的速度曲线 */
@@ -68,9 +73,9 @@ body {
 }
 .primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 400;
-  letter-spacing: 15px;
+  letter-spacing: 1.5rem;
   animation-name: moveInRight; /* 设置应用动画名 */
   animation-duration: 1s; /* 设置动画持续时间 */
   animation-timing-function: ease-out; /* 设置动画的速度曲线 */
@@ -79,7 +84,7 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0; /* 透明度为0 */
-    transform: translateX(-100px); /* 从左边-100px移动到现在位置*/
+    transform: translateX(-10rem); /* 从左边-100px移动到现在位置*/
   }
 
   /*
@@ -92,7 +97,7 @@ body {
   */
 
   80% {
-    transform: translateX(20px); /* 从现在位置移动到右边10px */
+    transform: translateX(2rem); /* 从现在位置移动到右边10px */
   }
 
   100% {
@@ -104,11 +109,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -120,7 +125,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -134,20 +139,20 @@ body {
   /*:link 伪类选择器*/
   text-transform: uppercase;
   text-decoration: none; /*去掉下划线*/
-  padding: 15px 30px;
+  padding: 1.5rem 3rem;
   display: inline-block; /*设置为行内块元素*/
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s; /*都使用过渡效果*/
   position: relative;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
 }
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
 }
 
 .btn-white {
@@ -160,7 +165,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
