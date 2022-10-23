@@ -1,0 +1,52 @@
+.btn:link,
+.btn:visited {
+  /*:link 伪类选择器*/
+  text-transform: uppercase;
+  text-decoration: none; /*去掉下划线*/
+  padding: 1.5rem 3rem;
+  display: inline-block; /*设置为行内块元素*/
+  border-radius: 10rem;
+  transition: all 0.2s; /*都使用过渡效果*/
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+}
+
+.btn-white {
+  background-color: #fff;
+  color: $color-grey-dark;
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+/**/
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s; /*动画名 动画持续时间 动画速度曲线 动画延迟时间*/
+  animation-fill-mode: backwards; /*设置动画在开始之前就应用*/
+}

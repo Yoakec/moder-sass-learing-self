@@ -1,0 +1,38 @@
+body {
+  font-family: 'Courier New', Courier, monospace; /* 设置字体,会被body里面的元素都继承 */
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase; /* 设置字母大写 */
+  margin-bottom: 2rem;
+
+  &--main {
+    display: block; /* 设置为块级元素,是为了能够让其能够让其暂用可用的 */
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem; /* 设置字母间距 */
+    animation-name: moveInLeft; /* 设置应用动画名 */
+    animation-duration: 1s; /* 设置动画持续时间 */
+    animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+    /* 
+          animation-delay: 1s; 设置动画延迟时间 
+          animation-iteration-count: 3; 设置动画重复次数
+          */
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    animation-name: moveInRight; /* 设置应用动画名 */
+    animation-duration: 1s; /* 设置动画持续时间 */
+    animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+  }
+}

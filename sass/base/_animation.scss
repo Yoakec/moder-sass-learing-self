@@ -1,0 +1,52 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0; /* 透明度为0 */
+    transform: translateX(-10rem); /* 从左边-100px移动到现在位置*/
+  }
+
+  /*
+      50% {
+        transform: translateX(10px);
+        transform: rotate(); 旋转
+        transform: skew(); 倾斜
+        transform: scale(); 缩放
+      }
+      */
+
+  80% {
+    transform: translateX(2rem); /* 从现在位置移动到右边10px */
+  }
+
+  100% {
+    opacity: 1; /* 透明度为1 */
+    transform: translateX(0); /* 从左边0px移动到现在位置*/
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
