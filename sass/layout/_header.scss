@@ -2,11 +2,10 @@
   height: 95vh; /* 100vh是整个屏幕的高度，96vh是屏幕高度的96% */
   background-image: linear-gradient(
       to right bottom,
-      $color-primary-light,
-      $color-primary-dark
+      rgba($color-primary-light, 0.45),
+      rgba($color-primary-dark, 0.45)
     ),
-    /* 设置渐变色 */
-      url(https://images.freeimages.com/images/large-previews/a4c/girl-under-tree-1306574.jpg);
+    /* 设置渐变色 */ url(../../img/1.jpg);
   background-size: cover; /* 背景图片的大小，cover是填充整个屏幕 */
   background-position: top; /* 背景图片的位置，top是顶部,当浏览器视口大小发生变化时，背景不会裁剪的位置 */
   clip-path: polygon(

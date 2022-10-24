@@ -8,19 +8,18 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-  /*使得所有元素都继承box-sizing属性*/ }
+  box-sizing: inherit; /*使得所有元素都继承box-sizing属性*/
+}
 
 html {
-  font-size: 62.5%;
-  /*62.5% = 10px/16px 16px是浏览器默认*/ }
+  font-size: 62.5%; /*62.5% = 10px/16px 16px是浏览器默认*/
+}
 
 @keyframes moveInLeft {
   0% {
-    opacity: 0;
-    /* 透明度为0 */
-    transform: translateX(-10rem);
-    /* 从左边-100px移动到现在位置*/ }
+    opacity: 0; /* 透明度为0 */
+    transform: translateX(-10rem); /* 从左边-100px移动到现在位置*/
+  }
   /*
       50% {
         transform: translateX(10px);
@@ -30,76 +29,73 @@ html {
       }
       */
   80% {
-    transform: translateX(2rem);
-    /* 从现在位置移动到右边10px */ }
+    transform: translateX(2rem); /* 从现在位置移动到右边10px */
+  }
   100% {
-    opacity: 1;
-    /* 透明度为1 */
-    transform: translateX(0);
-    /* 从左边0px移动到现在位置*/ } }
-
+    opacity: 1; /* 透明度为1 */
+    transform: translateX(0); /* 从左边0px移动到现在位置*/
+  }
+}
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
-
+    transform: translateX(0);
+  }
+}
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
   100% {
     opacity: 1;
-    transform: translateY(0); } }
-
+    transform: translateY(0);
+  }
+}
 body {
-  font-family: 'Courier New', Courier, monospace;
-  /* 设置字体,会被body里面的元素都继承 */
+  font-family: "Courier New", Courier, monospace; /* 设置字体,会被body里面的元素都继承 */
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
   padding: 3rem;
-  box-sizing: border-box;
-  /* 改变盒子模型，不在添加边框和填充 */ }
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+}
 
 .heading-primary {
   color: #fff;
-  text-transform: uppercase;
-  /* 设置字母大写 */
-  margin-bottom: 2rem; }
-  .heading-primary--main {
-    display: block;
-    /* 设置为块级元素,是为了能够让其能够让其暂用可用的 */
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* 设置字母间距 */
-    animation-name: moveInLeft;
-    /* 设置应用动画名 */
-    animation-duration: 1s;
-    /* 设置动画持续时间 */
-    animation-timing-function: ease-out;
-    /* 设置动画的速度曲线 */
-    /* 
-          animation-delay: 1s; 设置动画延迟时间 
-          animation-iteration-count: 3; 设置动画重复次数
-          */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.5rem;
-    animation-name: moveInRight;
-    /* 设置应用动画名 */
-    animation-duration: 1s;
-    /* 设置动画持续时间 */
-    animation-timing-function: ease-out;
-    /* 设置动画的速度曲线 */ }
+  text-transform: uppercase; /* 设置字母大写 */
+  margin-bottom: 2rem;
+}
+.heading-primary--main {
+  display: block; /* 设置为块级元素,是为了能够让其能够让其暂用可用的 */
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem; /* 设置字母间距 */
+  animation-name: moveInLeft; /* 设置应用动画名 */
+  animation-duration: 1s; /* 设置动画持续时间 */
+  animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+  /* 
+        animation-delay: 1s; 设置动画延迟时间 
+        animation-iteration-count: 3; 设置动画重复次数
+        */
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.5rem;
+  animation-name: moveInRight; /* 设置应用动画名 */
+  animation-duration: 1s; /* 设置动画持续时间 */
+  animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+}
 
 .heading-secondary {
   text-transform: uppercase;
@@ -107,176 +103,202 @@ body {
   font-size: 3.5rem;
   margin-bottom: 2rem;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
-  display: inline-block;
-  /* 设置为行内元素,和行内元素一样宽度*/
-  -webkit-background-clip: text;
-  /* 设置背景裁剪 */
-  color: transparent;
-  /* 设置透明 */
+  display: inline-block; /* 设置为行内元素,和行内元素一样宽度*/
+  -webkit-background-clip: text; /* 设置背景裁剪 */
+  color: transparent; /* 设置透明 */
   letter-spacing: 0.2rem;
-  transition: all 0.2s;
-  /*transition: all 0.2s; 设置所有属性的过渡效果，0.2s是过渡时间*/ }
-  .heading-secondary:hover {
-    transform: skewY(2deg) skewX(15deg) scale(1.1);
-    /*skewY(xdeg)设置元素在Y轴上的倾斜角度，skewX(xdeg)设置元素在X轴上的倾斜角度*/
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
-    /*text-shadow: h-shadow v-shadow blur color; 设置文本阴影*/ }
+  transition: all 0.2s; /*transition: all 0.2s; 设置所有属性的过渡效果，0.2s是过渡时间*/
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1); /*skewY(xdeg)设置元素在Y轴上的倾斜角度，skewX(xdeg)设置元素在X轴上的倾斜角度*/
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); /*text-shadow: h-shadow v-shadow blur color; 设置文本阴影*/
+}
 
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .paragraph {
-  font-size: 1.6rem; }
-  .paragraph:not(:last-child) {
-    margin-bottom: 2rem; }
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 2rem;
+}
 
 .u-center-text {
-  text-align: center; }
+  text-align: center;
+}
 
 .u-margin-bootom-2 {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 .u-margin-bootom-8 {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem;
+}
 
 .header {
-  height: 95vh;
-  /* 100vh是整个屏幕的高度，96vh是屏幕高度的96% */
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(https://images.freeimages.com/images/large-previews/a4c/girl-under-tree-1306574.jpg);
-  background-size: cover;
-  /* 背景图片的大小，cover是填充整个屏幕 */
-  background-position: top;
-  /* 背景图片的位置，top是顶部,当浏览器视口大小发生变化时，背景不会裁剪的位置 */
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  /* 裁剪图片，polygon()是裁剪图片的形状 ,里面的参数是各个角的坐标*/
-  position: relative;
-  /* 设置相对定位，这样子元素才能设置绝对定位 */ }
-  .header.logo-box {
-    position: absolute;
-    /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
-    top: 4rem;
-    left: 4rem;
-    transform: translate(-50%, -50%);
-    /* 使logo-box居中 */
-    text-align: center; }
-  .header__logo {
-    height: 3.5rem;
-    /* 设置logo的高度，浏览器会自动计算其宽度 */ }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* 使text-box居中是相对左顶点 */
-    transform: translate(-50%, -50%);
-    /* 使text-box居中是相对左顶点 */
-    text-align: center; }
+  height: 95vh; /* 100vh是整个屏幕的高度，96vh是屏幕高度的96% */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.45), rgba(40, 180, 133, 0.45)), url(../../img/1.jpg);
+  background-size: cover; /* 背景图片的大小，cover是填充整个屏幕 */
+  background-position: top; /* 背景图片的位置，top是顶部,当浏览器视口大小发生变化时，背景不会裁剪的位置 */
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* 裁剪图片，polygon()是裁剪图片的形状 ,里面的参数是各个角的坐标*/
+  position: relative; /* 设置相对定位，这样子元素才能设置绝对定位 */
+}
+.header.logo-box {
+  position: absolute; /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
+  top: 4rem;
+  left: 4rem;
+  transform: translate(-50%, -50%); /* 使logo-box居中 */
+  text-align: center;
+}
+.header__logo {
+  height: 3.5rem; /* 设置logo的高度，浏览器会自动计算其宽度 */
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%; /* 使text-box居中是相对左顶点 */
+  transform: translate(-50%, -50%); /* 使text-box居中是相对左顶点 */
+  text-align: center;
+}
 
 .row {
-  max-width: 114rem;
-  /* 最大宽度 */
-  margin: 0 auto;
-  /* 左右边距相同，自动居中 */
+  max-width: 114rem; /* 最大宽度 */
+  margin: 0 auto; /* 左右边距相同，自动居中 */
   /* 清除浮动 */
   /* 选择器以col-开头的元素 */
   /* 不是最后一个元素的下边距为$gutter-vertical */
   /*计算公式：(100% - 2 * 左右边距) / 3 */
-  /*计算公式：2 * ((100% - 左右边距) / 3) + 左右边距 */ }
-  .row:before, .row:after {
-    content: ' ';
-    display: table; }
-  .row:after {
-    clear: both; }
-  .row [class^='col-'] {
-    /* 不是最后一个元素的右边距为$gutter-horizontal */
-    float: left;
-    /* 左浮,脱离文档流 */ }
-    .row [class^='col-']:not(:last-child) {
-      margin-right: 6rem;
-      /* 左右边距 */ }
-  .row:not(:last-child) {
-    margin-bottom: 8rem;
-    /* 上下边距 */ }
-  .row .col-1-of-2 {
-    width: calc( (100% - 6rem) / 2);
-    /*计算公式：(100% - 左右边距) / 2 */ }
-  .row .col-1-of-3 {
-    width: calc((100% - 2 * 6rem) / 3); }
-  .row .col-1-of-4 {
-    width: calc((100% - 3 * 6rem) / 4); }
-  .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
-  .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
-  .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+  /*计算公式：2 * ((100% - 左右边距) / 3) + 左右边距 */
+}
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.row [class^=col-] {
+  /* 不是最后一个元素的右边距为$gutter-horizontal */
+  float: left; /* 左浮,脱离文档流 */
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem; /* 左右边距 */
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem; /* 上下边距 */
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2); /*计算公式：(100% - 左右边距) / 2 */
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.row .col-2-of-3 {
+  width: calc(
+      2 * ((100% - 2 * 6rem) / 3) + 6rem
+    );
+}
+.row .col-2-of-4 {
+  width: calc(
+      2 * ((100% - 3 * 6rem) / 4) + 6rem
+    );
+}
+.row .col-3-of-4 {
+  width: calc(
+      3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem
+    );
+}
 
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
-  margin-top: -20vh; }
+  margin-top: -20vh;
+}
+
+.section-features {
+  margin-top: -20rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.45), rgba(40, 180, 133, 0.45)), url(../../img/3.jpg);
+  background-size: cover; /* 背景图片的大小，cover是填充整个屏幕 */
+  background-position: top; /* 背景图片的位置，top是顶部,当浏览器视口大小发生变化时，背景不会裁剪的位置 */
+  transform: skewY(-7deg); /* 倾斜-7度 */
+  /* 为了让section-features的子元素不被倾斜，所以要倾斜回来 */
+}
+.section-features > * {
+  transform: skewY(7deg); /* 倾斜7度 */
+}
 
 .composition {
   position: relative;
-  /*&__photo:not(:hover) 选择器选择所有不是:hover的元素*/ }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    position: absolute;
-    z-index: 10;
-    transition: all 0.2s;
-    outline-offset: 0.2rem;
-    /*轮廓偏移量*/ }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--p3 {
-      left: 20%;
-      top: 10rem; }
-    .composition__photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-      z-index: 20;
-      outline: 0.5rem solid #55c57a;
-      /*边框和border使用类似*/ }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
+  /*&__photo:not(:hover) 选择器选择所有不是:hover的元素*/
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  outline-offset: 0.2rem; /*轮廓偏移量*/
+}
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+.composition__photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  outline: 0.5rem solid #55c57a; /*边框和border使用类似*/
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
 
 .btn:link,
 .btn:visited {
   /*:link 伪类选择器*/
   text-transform: uppercase;
-  text-decoration: none;
-  /*去掉下划线*/
+  text-decoration: none; /*去掉下划线*/
   padding: 1.5rem 3rem;
-  display: inline-block;
-  /*设置为行内块元素*/
+  display: inline-block; /*设置为行内块元素*/
   border-radius: 10rem;
-  transition: all 0.2s;
-  /*都使用过渡效果*/
-  position: relative; }
+  transition: all 0.2s; /*都使用过渡效果*/
+  position: relative;
+}
 
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /*x偏移量 y偏移量 模糊值*/ }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+}
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /*x偏移量 y偏移量 模糊值*/ }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
+}
 
 .btn-white {
   background-color: #fff;
-  color: #777; }
+  color: #777;
+}
 
 .btn::after {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -285,21 +307,23 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn-white::after {
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 /**/
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn-animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /*动画名 动画持续时间 动画速度曲线 动画延迟时间*/
-  animation-fill-mode: backwards;
-  /*设置动画在开始之前就应用*/ }
+  animation: moveInBottom 0.5s ease-out 0.75s; /*动画名 动画持续时间 动画速度曲线 动画延迟时间*/
+  animation-fill-mode: backwards; /*设置动画在开始之前就应用*/
+}
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
@@ -308,14 +332,38 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
   padding: 3px;
-  transition: all 0.2s; }
-
+  transition: all 0.2s;
+}
 .btn-text:hover {
   background-color: #55c57a;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
-
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
 .btn-text:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.8);
+  transition: all 0.3s;
+}
+.feature-box_icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block; /* 设置为行内元素,和行内元素一样宽度*/
+  -webkit-background-clip: text; /* 设置背景裁剪 */
+  color: transparent; /* 设置透明 */
+}
+.feature-box:hover {
+  transform: translateY(-0.5rem) scale(1.05);
+}
+
+/*# sourceMappingURL=style.css.map */

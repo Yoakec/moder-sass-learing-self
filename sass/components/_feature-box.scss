@@ -1,0 +1,29 @@
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.8);
+  transition: all 0.3s;
+
+  &_icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    display: inline-block; /* 设置为行内元素,和行内元素一样宽度*/
+    -webkit-background-clip: text; /* 设置背景裁剪 */
+    color: transparent; /* 设置透明 */
+  }
+
+  &_text {
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem) scale(1.05);
+  }
+}
