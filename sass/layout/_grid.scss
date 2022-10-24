@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; /* 最大宽度 */
-  background-color: #eee;
   margin: 0 auto; /* 左右边距相同，自动居中 */
   //   margin-bottom: $gutter-vertical; /* 上下边距 */
   @include clearfix; /* 清除浮动 */
@@ -10,8 +9,6 @@
   //   } /* 最后一个元素的下边距为0 */
 
   [class^='col-'] {
-    background-color: aquamarine;
-
     &:not(:last-child) {
       margin-right: $gutter-horizontal; /* 左右边距 */
     } /* 不是最后一个元素的右边距为$gutter-horizontal */

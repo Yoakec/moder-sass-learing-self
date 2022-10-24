@@ -50,3 +50,28 @@
   animation: moveInBottom 0.5s ease-out 0.75s; /*动画名 动画持续时间 动画速度曲线 动画延迟时间*/
   animation-fill-mode: backwards; /*设置动画在开始之前就应用*/
 }
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+  }
+}

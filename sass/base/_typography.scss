@@ -36,3 +36,39 @@ body {
     animation-timing-function: ease-out; /* 设置动画的速度曲线 */
   }
 }
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  display: inline-block; /* 设置为行内元素,和行内元素一样宽度*/
+  -webkit-background-clip: text; /* 设置背景裁剪 */
+  color: transparent; /* 设置透明 */
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; /*transition: all 0.2s; 设置所有属性的过渡效果，0.2s是过渡时间*/
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1); /*skewY(xdeg)设置元素在Y轴上的倾斜角度，skewX(xdeg)设置元素在X轴上的倾斜角度*/
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2); /*text-shadow: h-shadow v-shadow blur color; 设置文本阴影*/
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
