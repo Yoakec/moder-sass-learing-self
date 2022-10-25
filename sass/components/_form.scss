@@ -1,0 +1,91 @@
+.form {
+  &_group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &_input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 80%;
+    display: block;
+    &::-webkit-input-placeholder {
+      color: $color-green-light;
+    } /*设置输入框的占位符颜色*/
+
+    &:focus:invalid {
+      outline: none;
+      background-color: $color-white;
+      border-bottom: 3px solid $color-tomat-light;
+    }
+  }
+  &_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    border-bottom: 3px solid $color-green-dark;
+  }
+
+  &_label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.2s;
+  }
+
+  &_input:placeholder-shown + &_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  } /*设置输入框的占位符的下滑动画*/
+
+  &_radio_group {
+    width: 48%;
+    display: inline-block;
+  }
+
+  &_radio_input {
+    display: none;
+  }
+
+  &_radio_label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &_radio_button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-green-light;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &::after {
+      content: '';
+      display: block;
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-green-light;
+      opacity: 0;
+      transition: opcacity 0.2s;
+    }
+  }
+
+  &_radio_input:checked ~ &_radio_label &_radio_button::after {
+    opacity: 1;
+  }
+}
