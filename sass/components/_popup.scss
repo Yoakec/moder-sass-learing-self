@@ -1,0 +1,61 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.9);
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  } /*设置伪类，当点击时，显示弹出框*/
+
+  &:target &_content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &_content {
+    @include absCenter;
+
+    width: 75%;
+    height: 50rem;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    display: table;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.3s;
+  }
+
+  &_left {
+    width: 33%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &_right {
+    width: 66%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &_img {
+    display: block;
+    width: 100%;
+  }
+  &_text {
+    margin-bottom: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 1px solid $color-black;
+
+    hyphens: auto; /*hyphens: auto; 设置自动换行*/
+  }
+}

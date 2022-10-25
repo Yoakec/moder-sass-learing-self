@@ -795,4 +795,61 @@ body {
   opacity: 1;
 }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  /*设置伪类，当点击时，显示弹出框*/
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup:target .popup_content {
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 50rem;
+  background-color: #fff;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  display: table;
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.3s;
+}
+.popup_left {
+  width: 33%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.popup_right {
+  width: 66%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 5rem;
+}
+.popup_img {
+  display: block;
+  width: 100%;
+}
+.popup_text {
+  margin-bottom: 2rem;
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid #000;
+  hyphens: auto; /*hyphens: auto; 设置自动换行*/
+}
+
 /*# sourceMappingURL=style.css.map */
