@@ -298,11 +298,6 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
 }
 
-.btn-white {
-  background-color: #fff;
-  color: #777;
-}
-
 .btn::after {
   content: "";
   display: inline-block;
@@ -316,8 +311,19 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn_white {
   background-color: #fff;
+  color: #f7f7f7;
+}
+.btn_white::after {
+  background-color: #fff;
+}
+.btn_green {
+  background-color: #7ed56f;
+  color: #f7f7f7;
+}
+.btn_green::after {
+  background-color: #7ed56f;
 }
 
 /**/
@@ -376,6 +382,7 @@ body {
   perspective: 150rem; /*perspective是3D元素的视角，值越大，视角越大，3D元素越小*/
   -moz-perspective: 150rem;
   position: relative;
+  height: 52rem;
 }
 .card_side {
   height: 50rem;
@@ -441,6 +448,27 @@ body {
 }
 .card_detail ul li:not(:last-child) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card_cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.card_price_box {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 8rem;
+}
+.card_price_only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card_price_value {
+  font-size: 6rem;
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=style.css.map */

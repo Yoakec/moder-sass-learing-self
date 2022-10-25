@@ -19,11 +19,6 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x偏移量 y偏移量 模糊值*/
 }
 
-.btn-white {
-  background-color: #fff;
-  color: $color-grey-dark;
-}
-
 .btn::after {
   content: '';
   display: inline-block;
@@ -37,8 +32,24 @@
   transition: all 0.4s;
 }
 
-.btn-white::after {
-  background-color: #fff;
+.btn {
+  &_white {
+    background-color: $color-white;
+    color: $color-grey-light-1;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &_green {
+    background-color: $color-green-light;
+    color: $color-grey-light-1;
+
+    &::after {
+      background-color: $color-green-light;
+    }
+  }
 }
 /**/
 .btn:hover::after {

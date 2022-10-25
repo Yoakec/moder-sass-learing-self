@@ -1,8 +1,9 @@
 .card {
   perspective: 150rem; /*perspective是3D元素的视角，值越大，视角越大，3D元素越小*/
   -moz-perspective: 150rem;
-
   position: relative;
+  height: 52rem;
+
   &_side {
     height: 50rem;
     transition: all 0.5s ease;
@@ -13,6 +14,7 @@
     overflow: hidden; /*隐藏超出部分*/
     backface-visibility: hidden; /*backface-visibility是设置元素的背面是否可见，hidden是不可见*/
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
     &_front {
       background-color: #fff;
     }
@@ -95,5 +97,30 @@
         }
       }
     }
+  }
+
+  &_cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &_price_box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &_price_only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &_price_value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
