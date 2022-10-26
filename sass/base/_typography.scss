@@ -4,8 +4,6 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
-  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
 }
 
 .heading-primary {
@@ -25,6 +23,9 @@ body {
           animation-delay: 1s; 设置动画延迟时间 
           animation-iteration-count: 3; 设置动画重复次数
           */
+    @include respond(Phone) {
+      letter-spacing: 1rem;
+    }
   }
   &--sub {
     display: block;
@@ -34,6 +35,9 @@ body {
     animation-name: moveInRight; /* 设置应用动画名 */
     animation-duration: 1s; /* 设置动画持续时间 */
     animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+    @include respond(Phone) {
+      letter-spacing: 1rem;
+    }
   }
 }
 
@@ -52,6 +56,10 @@ body {
   color: transparent; /* 设置透明 */
   letter-spacing: 0.2rem;
   transition: all 0.2s; /*transition: all 0.2s; 设置所有属性的过渡效果，0.2s是过渡时间*/
+
+  @include respond(Phone) {
+    font-size: 2rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1); /*skewY(xdeg)设置元素在Y轴上的倾斜角度，skewX(xdeg)设置元素在X轴上的倾斜角度*/

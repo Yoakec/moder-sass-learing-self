@@ -16,3 +16,50 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+//Media Queries
+/*
+0 - 600px: Phone
+600 - 900px: Tablet
+900 - 1200px: Small Desktop
+1200 - 1800px: Desktop
+*/
+// @mixin respond-phone {
+//   @media (max-width: 600px) {
+//     @content; /*@content是一个占位符，用来表示这里将会有一些内容*/
+//   }
+// }
+
+/*
+$breakpoint can be any of the following:
+Phone
+Tablet
+Small-Desktop
+Desktop
+
+1em = 16px
+
+ORDER: Base + typography >generic layout > grid > page layouts>components >utilities
+
+
+
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == Phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
+  } @else if $breakpoint == Tablet {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  } @else if $breakpoint == Small-Desktop {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  } @else if $breakpoint == Desktop {
+    @media (max-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}

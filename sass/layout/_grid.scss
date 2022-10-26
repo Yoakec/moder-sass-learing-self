@@ -9,11 +9,22 @@
   //   } /* 最后一个元素的下边距为0 */
 
   [class^='col-'] {
+    float: left; /* 左浮,脱离文档流 */
     &:not(:last-child) {
       margin-right: $gutter-horizontal; /* 左右边距 */
     } /* 不是最后一个元素的右边距为$gutter-horizontal */
 
-    float: left; /* 左浮,脱离文档流 */
+    @include respond(Tablet) {
+      max-width: 50% !important; /* 平板端宽度为50% */
+    }
+
+    @include respond(Phone) {
+      width: 100% !important; /* 手机端宽度为100% */
+      &:not(:last-child) {
+        margin-right: 0 !important; /* 手机端右边距为0 */
+        margin-bottom: $gutter-vertical; /* 手机端下边距为$gutter-vertical */
+      }
+    }
   } /* 选择器以col-开头的元素 */
 
   &:not(:last-child) {

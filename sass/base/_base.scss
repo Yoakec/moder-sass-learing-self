@@ -8,4 +8,33 @@
 
 html {
   font-size: 62.5%; /*62.5% = 10px/16px 16px是浏览器默认*/
+
+  @include respond(Desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(Small-Desktop) {
+    font-size: 62.5%;
+  }
+
+  @include respond(Tablet) {
+    font-size: 50%;
+  }
+
+  @include respond(Phone) {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+
+  @include respond(Small-Desktop) {
+    padding: 0;
+  }
+}
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

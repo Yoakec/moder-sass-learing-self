@@ -3,6 +3,26 @@
 /* 上下边距 */
 /* 左右边距 */
 /*添加伪元素，清除浮动*/
+/*
+0 - 600px: Phone
+600 - 900px: Tablet
+900 - 1200px: Small Desktop
+1200 - 1800px: Desktop
+*/
+/*
+$breakpoint can be any of the following:
+Phone
+Tablet
+Small-Desktop
+Desktop
+
+1em = 16px
+
+ORDER: Base + typography >generic layout > grid > page layouts>components >utilities
+
+
+
+*/
 *,
 *::after,
 *::before {
@@ -13,6 +33,41 @@
 
 html {
   font-size: 62.5%; /*62.5% = 10px/16px 16px是浏览器默认*/
+}
+@media (max-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
+}
+@media (max-width: 75em) {
+  body {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: #55c57a;
+  color: #fff;
 }
 
 @keyframes moveInLeft {
@@ -65,8 +120,6 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-  box-sizing: border-box; /* 改变盒子模型，不在添加边框和填充 */
 }
 
 .heading-primary {
@@ -87,6 +140,11 @@ body {
         animation-iteration-count: 3; 设置动画重复次数
         */
 }
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -95,6 +153,11 @@ body {
   animation-name: moveInRight; /* 设置应用动画名 */
   animation-duration: 1s; /* 设置动画持续时间 */
   animation-timing-function: ease-out; /* 设置动画的速度曲线 */
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 1rem;
+  }
 }
 
 .heading-secondary {
@@ -108,6 +171,11 @@ body {
   color: transparent; /* 设置透明 */
   letter-spacing: 0.2rem;
   transition: all 0.2s; /*transition: all 0.2s; 设置所有属性的过渡效果，0.2s是过渡时间*/
+}
+@media (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2rem;
+  }
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1); /*skewY(xdeg)设置元素在Y轴上的倾斜角度，skewX(xdeg)设置元素在X轴上的倾斜角度*/
@@ -147,6 +215,11 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* 裁剪图片，polygon()是裁剪图片的形状 ,里面的参数是各个角的坐标*/
   position: relative; /* 设置相对定位，这样子元素才能设置绝对定位 */
 }
+@media (min-resolution: 192dpi) and (min-width: 37.5em) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.45), rgba(40, 180, 133, 0.45)), url(../img/1.jpg);
+  }
+}
 .header.logo-box {
   position: absolute; /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
   top: 4rem;
@@ -182,11 +255,25 @@ body {
   clear: both;
 }
 .row [class^=col-] {
-  /* 不是最后一个元素的右边距为$gutter-horizontal */
   float: left; /* 左浮,脱离文档流 */
+  /* 不是最后一个元素的右边距为$gutter-horizontal */
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem; /* 左右边距 */
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    max-width: 50% !important; /* 平板端宽度为50% */
+  }
+}
+@media (max-width: 37.5em) {
+  .row [class^=col-] {
+    width: 100% !important; /* 手机端宽度为100% */
+  }
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0 !important; /* 手机端右边距为0 */
+    margin-bottom: 8rem; /* 手机端下边距为$gutter-vertical */
+  }
 }
 .row:not(:last-child) {
   margin-bottom: 8rem; /* 上下边距 */
@@ -807,6 +894,13 @@ body {
   visibility: hidden;
   transition: all 0.3s;
   /*设置伪类，当点击时，显示弹出框*/
+}
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+  .popup {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 }
 .popup:target {
   opacity: 1;

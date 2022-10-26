@@ -78,6 +78,11 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
+                srcset="./img/1.jpg 300w, ./img/2.jpg 2x"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo1"
+              />
+              <img
                 src="img/1.jpg"
                 alt="photo 1"
                 class="composition__photo composition__photo--p1"
@@ -369,11 +374,13 @@
 
     <footer class="footer">
       <div class="footer_logo_box">
-        <img
-          src="https://element-plus.org/images/element-plus-logo.svg"
-          alt="logo"
-          class="footer_logo"
-        />
+        <picture class="footer_logo">
+          <source
+            srcset="./img/1.jpg 1x, ./img/2.jpg 2x"
+            media="(max-width:37.6em)"
+          />
+          <img srcset="./img/1.jpg 1x, ./img/2.jpg 2x" alt="Logo" />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">

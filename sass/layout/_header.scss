@@ -16,6 +16,15 @@
   ); /* 裁剪图片，polygon()是裁剪图片的形状 ,里面的参数是各个角的坐标*/
   position: relative; /* 设置相对定位，这样子元素才能设置绝对定位 */
 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.45),
+        rgba($color-primary-dark, 0.45)
+      ),
+      /* 设置渐变色 */ url(../img/1.jpg);
+  }
+
   &.logo-box {
     position: absolute; /* 绝对定位，相对于最近的父元素定位,一定要开启父相子绝 */
     top: 4rem;
